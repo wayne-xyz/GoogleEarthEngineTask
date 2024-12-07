@@ -1,16 +1,23 @@
 # GoogleEarthEngineTask
 Several Tasks about using Google Earth Engine.
 
-## Goal 1 - Get the jpgs file of combination of certain shape and basemap
+## Tif_ML
 
-using the arcExportingJPEGP.ipynb 
+This is folder for using Google Earth Engine to generate training and testing data for Machine Learning.
 
-Count of shapes :
+Basedon using the Ncfi and sentinel
 
-Time of exporting:
-Start time: Sun Mar 24 16:43:38 2024
-Stop time: Sun Mar 24 18:29:02 2024
-Elapsed time: 6324.00 seconds
+### Processing
 
-Note:
-Only one time failed and exporting again.
+- Collect the tif file from Google Earth Engine
+- Generate the target tif from the cliped shape and cross with the nicfi tif range by using the NASA fire points data shape
+    - Target tif generate Overlap , and buffering the point to circle
+- Resampling the shape between the nicfi and sentinel, make the data be same resolution
+    - Downscalling the nicfi to sentinel resolution
+
+- Minimize the data scall. only choose 100 dp for 3 month, 300 nicfi image ,1000 sentinel image ,300 target
+
+- Data ready for training:
+    - option1: Tabular data ,merge the all value from 4x nicfi, 26 sentinel x 3 image/month 
+    - Tif , cnn model
+    -
