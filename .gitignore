@@ -4,4 +4,4 @@ Tif_Trainning/nasa_data/J1V/
 **/nasa_data/
 Tif_Trainning/nasa_data/
 Tif_ML/dev_csv/dev_target.csv
-Tif_ML/dev_parquet/dev_target.parquet
+Tif_ML/dev_parquet/dev_downscaled.parquet
