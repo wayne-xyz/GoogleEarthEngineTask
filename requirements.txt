@@ -3,3 +3,4 @@ leafmap
 geopandas
 jax
 pyarrow
+xgboost
