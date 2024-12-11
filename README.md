@@ -3,21 +3,39 @@ Several Tasks about using Google Earth Engine.
 
 ## Tif_ML
 
-This is folder for using Google Earth Engine to generate training and testing data for Machine Learning.
+### Compared_ml_v2_downscal.ipynb
 
-Basedon using the Ncfi and sentinel
+# Fire Detection using Multi-Source Satellite Imagery
 
-### Processing
+This project implements a machine learning approach to detect fires using multi-source satellite imagery, including NICFI, Sentinel, and other remote sensing data.
 
-- Collect the tif file from Google Earth Engine
-- Generate the target tif from the cliped shape and cross with the nicfi tif range by using the NASA fire points data shape
-    - Target tif generate Overlap , and buffering the point to circle
-- Resampling the shape between the nicfi and sentinel, make the data be same resolution
-    - Downscalling the nicfi to sentinel resolution
+## Project Overview
 
-- Minimize the data scall. only choose 100 dp for 3 month, 300 nicfi image ,1000 sentinel image ,300 target
+The project uses multiple satellite data sources to detect and analyze fire occurrences:
+- NICFI (Norway's International Climate and Forest Initiative) imagery
+- Sentinel satellite data
+- Combined multi-source approach
 
-- Data ready for training:
-    - option1: Tabular data ,merge the all value from 4x nicfi, 26 sentinel x 3 image/month 
-    - Tif , cnn model
-    -
+## Data Pipeline
+
+### 1. Data Preparation
+- Downscaling of high-resolution imagery
+- Feature extraction from multiple bands
+- Data cleaning and preprocessing
+- Handling class imbalance using undersampling
+
+### 2. Model Implementation
+Three different models are implemented and compared:
+- Logistic Regression
+- Random Forest
+- XGBoost
+
+### 3. Performance Metrics
+The models are evaluated using metrics suitable for imbalanced datasets:
+- Balanced Accuracy
+- Matthews Correlation Coefficient
+- ROC AUC Score
+- Precision-Recall Curves
+- Cohen's Kappa
+
+## Project Structure
